@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from './person';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'changeDetection';
+
+  public person: Person={
+    name:"john Doe",
+    age : 30
+  }
+
+  public check(){
+    console.log("PARENT view refreshing")
+  }
+
+  public reassign(){
+    this.person={
+      name: this.person.name,
+      age: this.person.age
+    }
+  }
+
 }
